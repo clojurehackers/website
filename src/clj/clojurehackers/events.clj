@@ -3,9 +3,11 @@
    [clojure.edn :as edn])
   (:import
    (java.time LocalDate)
-   (java.time.format DateTimeFormatter)))
+   (java.time.format DateTimeFormatter)
+   (java.util Locale)))
 
-(def ^:private date-formatter (DateTimeFormatter/ofPattern "MMMM d, yyyy"))
+(def ^:private date-formatter
+  (DateTimeFormatter/ofPattern "d 'de' MMMM 'de' yyyy" (Locale/forLanguageTag "pt-BR")))
 
 (defn load-events [path]
   (->> (slurp path)

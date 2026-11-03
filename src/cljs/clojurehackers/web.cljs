@@ -5,8 +5,8 @@
 
 (defn- empty-message [list-id]
   (if (= list-id "upcoming-events")
-    "No upcoming meetups yet."
-    "No past meetups yet."))
+    "Nenhum encontro agendado ainda."
+    "Nenhum encontro anterior ainda."))
 
 (defn- add-empty-state [list]
   (when (zero? (.-childElementCount list))
