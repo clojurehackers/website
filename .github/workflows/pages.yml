@@ -28,7 +28,7 @@ jobs:
 
       - name: Build site
         run: |
-          clj -M:build target
+          clojure -M:build target
           cp -R assets target/assets
 
       - name: Upload site artifact
