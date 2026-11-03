@@ -2,4 +2,7 @@
  :deps
  {org.clojure/clojurescript {:mvn/version "1.12.42"}
   hiccup/hiccup {:mvn/version "2.0.0"}}
- :aliases {:build {:main-opts ["-m" "clojurehackers.template"]}}}
+ :aliases
+ {:build {:main-opts ["-m" "clojurehackers.template"]}
+  :cljs  {:extra-paths ["src/cljs"]
+          :main-opts ["-m" "cljs.main" "-co" "build.edn" "-c"]}}}

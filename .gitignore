@@ -3,4 +3,7 @@
 .lsp
 .nrepl*
 
-target
+out
+resources/public/index.html
+resources/public/main.js
+resources/public/main.js.map
