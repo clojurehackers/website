@@ -4,6 +4,8 @@
    [hiccup2.core :as h])
   (:gen-class))
 
+(def ^:private external-attrs {:target "_blank" :rel "noopener noreferrer"})
+
 (defn- head []
   [:head
    [:meta {:charset "UTF-8"}]
@@ -31,7 +33,7 @@
       "every 2 weeks" [:br]
       "in Campinas/SP, Brazil" [:br]
       "at UNICAMP."]
-     [:a.signup {:href "https://discord.gg/PLACEHOLDER"} "JOIN US"]]]])
+     [:a.signup (merge external-attrs {:href "https://discord.gg/UTxeA9tHnd"}) "JOIN US"]]]])
 
 (defn- values []
   [:section.values
@@ -44,7 +46,7 @@
   (let [label (str "#" number ": " title)]
     [:li {:data-date date}
      [:span.event-info
-      [:span.event-name (if link [:a {:href link} label] label)]
+      [:span.event-name (if link [:a (merge external-attrs {:href link}) label] label)]
       [:span.event-host (str "hosted by " host)]]
      [:span.event-date (str (events/format-date date) (when time (str " · " time)))]]))
 
@@ -73,8 +75,8 @@
    [:div.container
     [:span "Clojurehackers"]
     [:nav.community-links {:aria-label "Community links"}
-     [:a {:href "https://github.com/PLACEHOLDER-ORG"} "GitHub"]
-     [:a {:href "https://discord.gg/PLACEHOLDER"} "Discord"]]
+     [:a (merge external-attrs {:href "https://github.com/clojurehackers"}) "GitHub"]
+     [:a (merge external-attrs {:href "https://discord.gg/UTxeA9tHnd"}) "Discord"]]
     [:span "Copyright Clojurehackers 2026"]]])
 
 (defn page [events-path]
