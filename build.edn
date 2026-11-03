@@ -1,0 +1,5 @@
+{:main clojurehackers.web
+ :optimizations :advanced
+ :infer-externs true
+ :output-to "resources/public/main.js"
+ :output-dir "out"}

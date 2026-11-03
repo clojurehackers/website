@@ -27,14 +27,15 @@ jobs:
           cli: latest
 
       - name: Build site
-        run: |
-          clojure -M:build target
-          cp -R assets target/assets
+        run: clojure -M:build resources/public
+
+      - name: Build ClojureScript
+        run: clojure -M:cljs
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: target
+          path: resources/public
 
   deploy:
     needs: build
